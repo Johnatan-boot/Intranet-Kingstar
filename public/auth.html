@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingstar Intranet</title>
+   <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+ 
+</head>
+<body class="login-page">
+
+  <div class="login-box">
+    <img src="assets/img/logokingstar.gif" class="logo">
+    <h1>Kingstar Intranet</h1>
+
+  <form id="loginForm" class="d-grid gap-2">
+  <input type="email" placeholder="Email corporativo" required>
+  <input type="password" placeholder="Senha" required>
+
+  <button>Entrar</button>
+
+  <button
+  type="button"
+  id="btn-cadastro"
+  class="btn-secundario"
+  data-bs-toggle="modal"
+  data-bs-target="#modalCadastro"
+>
+  Solicitar Cadastro
+</button>
+
+</form>
+
+
+
+   <div class="modal fade" id="modalCadastro" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <h5 class="text-center mb-3">Solicitar Cadastro</h5>
+
+      <form id="form-cadastro">
+        <input class="form-control mb-2" placeholder="Nome completo" required>
+        <input class="form-control mb-2" placeholder="Email corporativo" required>
+
+        <select class="form-control mb-2" required>
+          <option value="">Selecione o setor</option>
+          <option>Logística</option>
+          <option>TI</option>
+          <option>Estoque</option>
+        </select>
+
+        <input type="password" class="form-control mb-3" placeholder="Senha" required>
+
+        <button class="btn btn-dark w-100">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+    <p id="erro" class="erro"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

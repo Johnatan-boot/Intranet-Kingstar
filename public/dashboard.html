@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Kingstar</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+
+  <nav class="sidebar">
+    <h2>Kingstar</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="estoque.html">Estoque</a>
+    <a href="pedidos.html">Pedidos</a>
+    <a href="transporte.html">Transporte</a>
+    <a href="auth.html">Sair</a>
+  </nav>
+
+  <main class="content">
+    <h1>Dashboard Operacional</h1>
+
+    <section class="kpis">
+      <div class="card">
+        <h3>Pedidos em atraso</h3>
+        <span id="kpi-atraso">0</span>
+      </div>
+
+      <div class="card">
+        <h3>Estoque crítico</h3>
+        <span id="kpi-estoque">0</span>
+      </div>
+
+      <div class="card">
+        <h3>OTIF</h3>
+        <span>92%</span>
+      </div>
+    </section>
+
+    <section class="alertas">
+      <h2>Alertas Operacionais</h2>
+      <ul id="lista-alertas"></ul>
+    </section>
+  </main>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/intel.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

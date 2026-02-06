@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Estoque | Kingstar</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+
+  <nav class="sidebar">
+    <h2>Kingstar</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="estoque.html">Estoque</a>
+    <a href="pedidos.html">Pedidos</a>
+    <a href="transporte.html">Transporte</a>
+  </nav>
+
+  <main class="content">
+    <h1>Controle de Estoque</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Loja</th>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Mínimo</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-estoque"></tbody>
+    </table>
+  </main>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/estoque.js"></script>
+</body>
+</html>

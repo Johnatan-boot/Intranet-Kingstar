@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nome": "João Silva",
+    "email": "joao@kingstar.com",
+    "senha": "123456",
+    "setor": "LOGISTICA",
+    "cargo": "Analista",
+    "role": "USER",
+    "ativo": true
+  },
+  {
+    "id": 2,
+    "nome": "Maria Souza",
+    "email": "maria@kingstar.com",
+    "senha": "123456",
+    "setor": "TI",
+    "cargo": "Desenvolvedora",
+    "role": "ADMIN",
+    "ativo": true
+  }
+]

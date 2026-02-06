@@ -1,0 +1,89 @@
+/* ===============================
+   LOGIN PAGE
+================================ */
+.login-page {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  padding: 16px;
+}
+
+/* ===============================
+   LOGIN BOX
+================================ */
+.login-box {
+  background: #fff;
+  padding: 32px;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* ===============================
+   LOGO
+================================ */
+.logo {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+/* ===============================
+   FORM LOGIN (ESCOPADO)
+================================ */
+#loginForm input {
+  width: 100%;
+  padding: 12px;
+}
+
+#loginForm button {
+  width: 100%;
+  padding: 12px;
+  background: #1f1f1f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* botão secundário */
+#loginForm .btn-secundario {
+  background: transparent;
+  color: #1f1f1f;
+  border: 1px solid #1f1f1f;
+}
+
+/* ===============================
+   ERRO
+================================ */
+.erro {
+  color: red;
+  font-size: 0.85rem;
+}
+
+/* ===============================
+   RESPONSIVIDADE
+================================ */
+@media (min-width: 768px) {
+  .login-box {
+    max-width: 420px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .login-box {
+    max-width: 480px;
+  }
+}
+
+/* ===============================
+   MODAL (DEIXAR BOOTSTRAP CONTROLAR)
+================================ */
+
+/* apenas ajustes visuais, sem layout */
+.modal-content {
+  border-radius: 14px;
+}

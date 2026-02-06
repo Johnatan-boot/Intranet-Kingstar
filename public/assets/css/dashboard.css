@@ -1,0 +1,86 @@
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: var(--primary);
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  color: var(--accent);
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.sidebar a:hover {
+  color: var(--accent);
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* CARDS / KPIs */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+.card span {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-top: 16px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.badge.danger { background: var(--danger); }
+.badge.success { background: var(--success); }
+.badge.warning { background: var(--warning); }
+
+/* ALERTAS */
+.alertas ul {
+  list-style: none;
+  padding: 0;
+}
+
+.alertas li {
+  background: #fff3cd;
+  padding: 10px;
+  border-left: 6px solid var(--warning);
+  margin-bottom: 8px;
+}
