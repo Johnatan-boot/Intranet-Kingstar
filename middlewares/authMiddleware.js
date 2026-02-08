@@ -4,16 +4,17 @@ const jwtConfig = require('../config/jwt');
 module.exports = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
-  if (!authHeader)
-    return res.status(401).json({ erro: 'Token não informado' });
+  if (!authHeader) {
+    return res.status(401).json({ erro: 'Token não fornecido' });
+  }
 
-  const [, token] = authHeader.split(' ');
+  const token = authHeader.split(' ')[1];
 
-  jwt.verify(token, jwtConfig.secret, (err, decoded) => {
-    if (err)
-      return res.status(403).json({ erro: 'Token inválido' });
-
+  try {
+    const decoded = jwt.verify(token, jwtConfig.secret);
     req.user = decoded;
     next();
-  });
+  } catch (err) {
+    return res.status(401).json({ erro: 'Token inválido' });
+  }
 };

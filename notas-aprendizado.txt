@@ -1,0 +1,103 @@
+🧠 REGRA DE OURO (guarda isso)
+
+server.js → só sobe servidor e conecta rotas
+
+routes/*.js → define endpoints
+
+controllers/*.js → regra de negócio
+
+middlewares/*.js → segurança
+
+Kingstar Intranet - Documentação Técnica
+========================================
+Versão do ciclo: 1
+Data de conclusão: 08/02/2026
+Autores: Johnatan Quenes
+
+1. Objetivo do ciclo
+-------------------
+Implementar o ciclo completo de autenticação e gerenciamento de usuários no sistema:
+- Cadastro de novos usuários (perfil Pendente)
+- Aprovação de usuários por ADMIN
+- Login com JWT
+- Redirecionamento baseado em role (ADMIN -> admin.html, USER -> dashboard.html)
+- Controle de acesso às páginas e menus (sidebar dinâmica)
+- Registro de ações em log de auditoria
+
+2. Estrutura de arquivos principais
+-----------------------------------
+- `server.js` -> Servidor Express, definição de rotas e páginas
+- `routes/authRoutes.js` -> Cadastro e login
+- `routes/adminRoutes.js` -> Aprovação e listagem de usuários pendentes
+- `middlewares/authMiddleware.js` -> Verifica token JWT
+- `middlewares/adminMiddleware.js` -> Bloqueia acesso para não-admin
+- `public/admin.html` -> Tela de gestão de usuários
+- `public/dashboard.html` -> Dashboard do usuário comum
+- `public/assets/js/admin.js` -> Lógica de fetch e aprovar usuários
+- `public/assets/js/dashboard.js` -> Dashboard de KPIs
+- `public/assets/js/sidebar.js` -> Controle de visibilidade de menus por role/setor
+- `public/assets/js/auth.js` -> Cadastro e login
+- `data/usuarios.json` -> Base de usuários
+- `utils/auditLog.js` -> Registro de logs de auditoria
+
+3. Fluxo de autenticação
+------------------------
+1. Usuário realiza cadastro através de `auth.html`:
+   - Campos: Nome, Email, Senha, Setor
+   - Usuário é criado com `ativo: false` (pendente)
+   - Modal confirma envio e alerta "Aguarde aprovação"
+   
+2. Admin faz login (`admin.html`) e vê a lista de usuários pendentes:
+   - Fetch GET `/api/admin/usuarios-pendentes`
+   - Aprovação via PUT `/api/admin/usuarios/:id/ativar`
+   - Ao aprovar, usuário recebe `ativo: true` no JSON e log de auditoria é gravado
+
+3. Login:
+   - POST `/api/login` com email e senha
+   - JWT gerado para usuários ativos
+   - Token salvo no `localStorage`
+   - Token decodificado para extrair `role` e `setor`
+   - Redirecionamento:
+     - `ADMIN` -> `/admin.html`
+     - `USER` -> `/dashboard.html`
+   
+4. Controle de acesso:
+   - `authMiddleware` protege rotas API
+   - `adminMiddleware` bloqueia rotas administrativas
+   - `sidebar.js` mostra/esconde menus conforme role/setor
+
+5. Auditoria:
+   - `utils/auditLog.js` grava logs em `data/audit.log`
+   - Formato: `[ISO Date] id (ROLE) - Ação`
+
+4. Erros e aprendizados
+-----------------------
+- **Erro 1:** Variável `usuario` não definida ao chamar `auditLog`  
+  - Causa: código tentava logar antes de verificar se o usuário existia  
+  - Correção: verificar existência do usuário antes de chamar `auditLog`
+
+- **Erro 2:** Rotas inconsistentes `/dashboard` vs `/dashboard.html`  
+  - Causa: duplicidade e falta de padronização  
+  - Correção: padronizar rotas no server.js e nunca repetir endpoints
+
+- **Erro 3:** Variável `data` ou `token` declaradas múltiplas vezes no frontend  
+  - Causa: scripts JS separados declarando mesmas variáveis globais  
+  - Correção: encapsular cada módulo com `let` ou `const` local, evitar redeclaração global
+
+- **Erro 4:** Usuário pendente conseguia logar  
+  - Causa: falta de checagem de `ativo` no login  
+  - Correção: verificação `if (!user.ativo) return erro` implementada no authRoutes
+
+- **Erro 5:** Sidebar bloqueando acesso indevido  
+  - Causa: lógica de exibição de menus sendo interpretada como bloqueio  
+  - Correção: separar lógica de **exibição de menus** da **validação de acesso**  
+
+- **Erro 6:** Senhas bcrypt não conhecidas para testes  
+  - Solução: criar usuário de teste com senha conhecida, aprovar manualmente via JSON para testes
+
+5. Observações finais
+---------------------
+- Ciclo 1 completo com autenticação, aprovação de usuários, redirecionamento baseado em role, controle de sidebar e auditoria
+- Sistema pronto para o segundo ciclo: dashboards avançados, KPIs dinâmicos, relatórios, logs detalhados, e melhorias de UX
+- Todos os erros foram documentados para **não repetir falhas no futuro**
+

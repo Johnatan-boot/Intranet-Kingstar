@@ -1,22 +1,101 @@
 [
   {
-    "id": 1,
-    "nome": "João Silva",
-    "email": "joao@kingstar.com",
-    "senha": "123456",
-    "setor": "LOGISTICA",
-    "cargo": "Analista",
-    "role": "USER",
-    "ativo": true
+    "id": "465e9a9a-f89b-40ca-b5d7-b13bbe10d02b",
+    "nome": "Johnatan Quenes Dos Santos",
+    "email": "johnatan@kingstar.com",
+    "senha": "$2b$10$HUwvfxISKRD0ZomBPyK8fu58DBVIy02cDjE5xUPaJKHz0.8TMOF0m",
+    "setor": "TI",
+    "cargo": "Administrador",
+    "role": "ADMIN",
+    "ativo": true,
+    "criadoEm": "2026-02-07T19:45:43.007Z"
   },
   {
-    "id": 2,
-    "nome": "Maria Souza",
-    "email": "maria@kingstar.com",
-    "senha": "123456",
+    "id": "teste-001",
+    "nome": "Usuário Teste 1",
+    "email": "teste1@kingstar.com",
+    "senha": "$2b$10$HUwvfxISKRD0ZomBPyK8fu58DBVIy02cDjE5xUPaJKHz0.8TMOF0m",
     "setor": "TI",
-    "cargo": "Desenvolvedora",
-    "role": "ADMIN",
-    "ativo": true
+    "cargo": "Pendente",
+    "role": "USER",
+    "ativo": true,
+    "criadoEm": "2026-02-07T23:00:00.000Z"
+  },
+  {
+    "id": "teste-002",
+    "nome": "Usuário Teste 2",
+    "email": "teste2@kingstar.com",
+    "senha": "$2b$10$HUwvfxISKRD0ZomBPyK8fu58DBVIy02cDjE5xUPaJKHz0.8TMOF0m",
+    "setor": "LOGISTICA",
+    "cargo": "Pendente",
+    "role": "USER",
+    "ativo": true,
+    "criadoEm": "2026-02-07T23:05:00.000Z"
+  },
+  {
+    "id": "teste-003",
+    "nome": "Usuário Teste 3",
+    "email": "teste3@kingstar.com",
+    "senha": "$2b$10$HUwvfxISKRD0ZomBPyK8fu58DBVIy02cDjE5xUPaJKHz0.8TMOF0m",
+    "setor": "ESTOQUE",
+    "cargo": "Pendente",
+    "role": "USER",
+    "ativo": false,
+    "criadoEm": "2026-02-07T23:10:00.000Z"
+  },
+  {
+    "id": "teste-004",
+    "nome": "Usuário Teste 4",
+    "email": "teste4@kingstar.com",
+    "senha": "$2b$10$HUwvfxISKRD0ZomBPyK8fu58DBVIy02cDjE5xUPaJKHz0.8TMOF0m",
+    "setor": "COMPRAS",
+    "cargo": "Pendente",
+    "role": "USER",
+    "ativo": false,
+    "criadoEm": "2026-02-07T23:15:00.000Z"
+  },
+  {
+    "id": "teste-005",
+    "nome": "Usuário Teste 5",
+    "email": "teste5@kingstar.com",
+    "senha": "$2b$10$HUwvfxISKRD0ZomBPyK8fu58DBVIy02cDjE5xUPaJKHz0.8TMOF0m",
+    "setor": "TI",
+    "cargo": "Pendente",
+    "role": "USER",
+    "ativo": false,
+    "criadoEm": "2026-02-07T23:20:00.000Z"
+  },
+  {
+    "id": "teste-006",
+    "nome": "Usuário Teste 6",
+    "email": "teste6@kingstar.com",
+    "senha": "$2b$10$HUwvfxISKRD0ZomBPyK8fu58DBVIy02cDjE5xUPaJKHz0.8TMOF0m",
+    "setor": "LOGISTICA",
+    "cargo": "Pendente",
+    "role": "USER",
+    "ativo": false,
+    "criadoEm": "2026-02-07T23:25:00.000Z"
+  },
+  {
+    "id": "teste-007",
+    "nome": "Usuário Teste 7",
+    "email": "teste7@kingstar.com",
+    "senha": "$2b$10$HUwvfxISKRD0ZomBPyK8fu58DBVIy02cDjE5xUPaJKHz0.8TMOF0m",
+    "setor": "ESTOQUE",
+    "cargo": "Pendente",
+    "role": "USER",
+    "ativo": false,
+    "criadoEm": "2026-02-07T23:30:00.000Z"
+  },
+  {
+    "id": "d280432e-df0a-419b-9a05-1479354766cb",
+    "nome": "baiano",
+    "email": "baiano@kingstar.com",
+    "senha": "$2b$10$vLmQ1.1J3WymNNu5Z3kZ.O0l3jdwNsXo5x2az1OkLrakNtJoFzhz6",
+    "setor": "LOGISTICA",
+    "cargo": "Pendente",
+    "role": "USER",
+    "ativo": true,
+    "criadoEm": "2026-02-08T03:38:39.343Z"
   }
 ]

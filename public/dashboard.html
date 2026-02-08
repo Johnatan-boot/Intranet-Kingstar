@@ -8,14 +8,17 @@
 </head>
 <body>
 
-  <nav class="sidebar">
-    <h2>Kingstar</h2>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="estoque.html">Estoque</a>
-    <a href="pedidos.html">Pedidos</a>
-    <a href="transporte.html">Transporte</a>
-    <a href="auth.html">Sair</a>
-  </nav>
+  <!-- sidebar.html -->
+<nav class="sidebar">
+  <h2>Kingstar</h2>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="estoque.html">Estoque</a>
+  <a href="pedidos.html">Pedidos</a>
+  <a href="transporte.html">Transporte</a>
+  <a id="menu-admin" href="admin.html" style="display:none;">Gestão de Usuários</a>
+  <a href="auth.html" onclick="logout()">Sair</a>
+</nav>
+
 
   <main class="content">
     <h1>Dashboard Operacional</h1>
@@ -42,7 +45,8 @@
       <ul id="lista-alertas"></ul>
     </section>
   </main>
-
+<div id="sidebar-container"></div>
+<script src="assets/js/sidebar.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/intel.js"></script>
   <script src="assets/js/dashboard.js"></script>

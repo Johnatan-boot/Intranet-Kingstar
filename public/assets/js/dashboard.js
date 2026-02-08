@@ -1,3 +1,39 @@
+
+//PROTEGENDO PAGINAS COM JWT NO FRONTEND
+const token = localStorage.getItem('token');
+
+if (!token) {
+  window.location.href = '/auth.html';
+}
+
+let payload;
+
+try {
+  payload = JSON.parse(atob(token.split('.')[1]));
+  console.log('Usuário logado:', payload);
+} catch {
+  localStorage.removeItem('token');
+  window.location.href = '/auth.html';
+}
+
+
+
+// Menu ADMIN
+if (payload.role === 'ADMIN') {
+  const adminMenu = document.getElementById('menu-admin');
+  if (adminMenu) adminMenu.style.display = 'block';
+}
+
+// Menu LOGÍSTICA
+if (payload.setor !== 'LOGISTICA') {
+  const menuLogistica = document.getElementById('menu-logistica');
+  if (menuLogistica) menuLogistica.style.display = 'none';
+}
+
+
+
+
+
 // KPI pedidos em atraso
 const atrasos = pedidos.filter(p => p.atrasoHoras > 2).length;
 const kpiAtraso = document.getElementById('kpi-atraso');

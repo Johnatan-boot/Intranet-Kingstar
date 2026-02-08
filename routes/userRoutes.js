@@ -4,12 +4,20 @@ const path = require('path');
 const usersPath = path.join(__dirname, '../data/usuarios.json');
 
 function getUsers() {
-  return JSON.parse(fs.readFileSync(usersPath));
+  return JSON.parse(fs.readFileSync(usersPath, 'utf8'));
 }
 
 function saveUsers(users) {
   fs.writeFileSync(usersPath, JSON.stringify(users, null, 2));
 }
+
+const setoresAutorizados = [
+  'LOGISTICA',
+  'ESTOQUE',
+  'TI',
+  'COMPRAS',
+  'FATURAMENTO'
+];
 
 module.exports = (app) => {
   app.post('/api/usuarios', (req, res) => {
@@ -19,27 +27,32 @@ module.exports = (app) => {
       return res.status(400).json({ erro: 'Dados incompletos' });
     }
 
-    const users = getUsers();
+    if (!setoresAutorizados.includes(setor.toUpperCase())) {
+      return res.status(403).json({ erro: 'Setor não autorizado' });
+    }
 
-    if (users.find(u => u.email === email)) {
-      return res.status(409).json({ erro: 'Usuário já existe' });
+    const usuarios = getUsers();
+
+    if (usuarios.find(u => u.email === email)) {
+      return res.status(409).json({ erro: 'Usuário já cadastrado' });
     }
 
     const novoUsuario = {
       id: Date.now(),
       nome,
       email,
-      senha,
-      setor,
+      senha, // futuramente vamos hashear
+      setor: setor.toUpperCase(),
       cargo: 'Pendente',
       role: 'USER',
-      ativo: false // 👈 importante
+      ativo: false,
+      criadoEm: new Date()
     };
 
-    users.push(novoUsuario);
-    saveUsers(users);
+    usuarios.push(novoUsuario);
+    saveUsers(usuarios);
 
-    res.json({
+    res.status(201).json({
       mensagem: 'Solicitação enviada. Aguarde liberação do administrador.'
     });
   });
