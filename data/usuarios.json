@@ -40,7 +40,7 @@
     "setor": "ESTOQUE",
     "cargo": "Pendente",
     "role": "USER",
-    "ativo": false,
+    "ativo": true,
     "criadoEm": "2026-02-07T23:10:00.000Z"
   },
   {
@@ -51,7 +51,7 @@
     "setor": "COMPRAS",
     "cargo": "Pendente",
     "role": "USER",
-    "ativo": false,
+    "ativo": true,
     "criadoEm": "2026-02-07T23:15:00.000Z"
   },
   {
@@ -62,7 +62,7 @@
     "setor": "TI",
     "cargo": "Pendente",
     "role": "USER",
-    "ativo": false,
+    "ativo": true,
     "criadoEm": "2026-02-07T23:20:00.000Z"
   },
   {

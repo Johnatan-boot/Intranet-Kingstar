@@ -1,0 +1,12 @@
+[
+  { "id": "MOT01", "nome": "Carlos Silva", "telefone": "5511977653883", "status": "ATIVO" },
+  { "id": "MOT02", "nome": "Ana Souza", "telefone": "5511988881111", "status": "ATIVO" },
+  { "id": "MOT03", "nome": "Roberto Lima", "telefone": "5511977772222", "status": "ATIVO" },
+  { "id": "MOT04", "nome": "Fernanda Costa", "telefone": "5511966663333", "status": "ATIVO" },
+  { "id": "MOT05", "nome": "Julio Mendes", "telefone": "5511955554444", "status": "ATIVO" },
+  { "id": "MOT06", "nome": "Patricia Alves", "telefone": "5511944445555", "status": "ATIVO" },
+  { "id": "MOT07", "nome": "Ricardo Nunes", "telefone": "5511933336666", "status": "ATIVO" },
+  { "id": "MOT08", "nome": "Mariana Rocha", "telefone": "5511922227777", "status": "ATIVO" },
+  { "id": "MOT09", "nome": "Felipe Martins", "telefone": "5511911118888", "status": "ATIVO" },
+  { "id": "MOT10", "nome": "Camila Ferreira", "telefone": "5511999990000", "status": "ATIVO" }
+]

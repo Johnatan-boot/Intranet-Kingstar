@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard Logística</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+
+    <link rel="stylesheet" href="assets/css/dashboard-log.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="brand">
+          <img src="././assets/img/logokingstar.gif" alt="Kingstar Logo" />
+          <h2>
+            <span class="brand-name">KINGSTAR</span>
+            <small>Colchões</small>
+          </h2>
+        </div>
+
+        <nav>
+          <a class="active" href="#">📊 Dashboard</a>
+          <a href="#">📦 Pedidos</a>
+          <a href="#">🚚 Transportadoras</a>
+          <a href="#">📍 Regiões</a>
+        </nav>
+      </aside>
+
+      <!-- CONTEÚDO PRINCIPAL -->
+      <main class="main">
+        <header class="topbar">
+          <h1>Dashboard Logística</h1>
+        </header>
+
+        <section class="filtros">
+          <div class="select-wrapper">
+            <select id="filtroStatus">
+              <option value="">Todos os status</option>
+              <option value="ENTREGUE">Entregue</option>
+              <option value="EM_TRANSITO">Em trânsito</option>
+              <option value="ATRASADO">Atrasado</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="kpis">
+          <div class="kpi">
+            <h3>Total de Pedidos</h3>
+            <span id="kpiTotal">0</span>
+          </div>
+
+          <div class="kpi">
+            <h3>Entregues</h3>
+            <span id="kpiEntregues">0</span>
+          </div>
+
+          <div class="kpi">
+            <h3>Atrasados</h3>
+            <span id="kpiAtrasados">0</span>
+          </div>
+        </section>
+
+
+
+
+      <section class="painel-executivo">
+
+  <div class="grafico-card">
+    <h3>Status das Entregas</h3>
+    <div class="grafico-container">
+      <canvas id="graficoStatus"></canvas>
+    </div>
+  </div>
+
+  <div class="grafico-card">
+    <h3>Entregas por Período</h3>
+    <div class="grafico-container">
+      <canvas id="graficoPeriodo"></canvas>
+    </div>
+  </div>
+
+      </section>
+
+
+
+
+        <section class="tabela">
+          <table>
+            <thead>
+              <tr>
+                <th>Pedido</th>
+                <th>Cliente</th>
+                <th>Status</th>
+                <th>Prazo</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabelaPedidos"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal fade" id="modalHistorico" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Histórico do Pedido <span id="historicoPedidoId"></span>
+            </h5>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <ul class="list-group" id="listaHistorico"></ul>
+<div id="mapaHistorico" style="height: 350px; margin-top: 20px;"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- TOAST GLOBAL -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1080">
+  <div id="toastNotificacao" class="toast align-items-center text-white border-0">
+    <div class="d-flex">
+      <div class="toast-body"></div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+        data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+  </body>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- GUARD PRIMEIRO -->
+<script src="assets/js/guard.js"></script>
+<script>
+  protegerPagina({ setoresPermitidos: ["LOGISTICA"] });
+</script>
+
+<!-- DADOS -->
+<script src="assets/js/dashboard-log-data.js"></script>
+
+<!-- UTILITÁRIOS -->
+<script src="assets/js/utils.js"></script>
+
+<!-- LÓGICA PRINCIPAL -->
+<script src="assets/js/dashboard-log.js"></script>
+
+<!-- FILTROS -->
+<script src="assets/js/filtros.js"></script>
+
+</html>

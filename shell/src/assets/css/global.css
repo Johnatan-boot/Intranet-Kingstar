@@ -1,0 +1,24 @@
+:root {
+  --primary: #1F1F1F;
+  --accent: #f5b700;
+  --bg: #f4f6f8;
+  --danger: #e63946;
+  --success: #2a9d8f;
+  --warning: #f4a261;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  display: flex;
+}
+
+
+
+
+

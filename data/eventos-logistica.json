@@ -1,0 +1,13 @@
+[
+  {
+    "pedidoId": "PED001",
+    "tipo": "CRIADO",
+    "descricao": "Pedido criado no sistema",
+    "data": "2026-02-13T10:00:00.000Z",
+    "motorista": "Carlos Silva",
+    "localizacao": {
+      "lat": -23.5505,
+      "lng": -46.6333
+    }
+  }
+]

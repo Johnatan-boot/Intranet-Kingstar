@@ -1,0 +1,28 @@
+/* BASE DO DASHBOARD */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+.layout .sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #111;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* CONTEÚDO */
+.layout .content {
+  flex: 1;
+  margin-left: 240px; /* ESSENCIAL */
+  padding: 30px;
+  transition: all 0.3s ease;
+}

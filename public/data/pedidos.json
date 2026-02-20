@@ -1,0 +1,12 @@
+[
+  {
+  "id": "PED001",
+  "cliente": "Loja Centro",
+  "status": "EM_TRANSITO",
+  "prazo": "2026-02-14",
+  "motoristaId": "MOT01",
+  "lat": -23.6200,
+  "lng": -46.7000
+}
+
+]

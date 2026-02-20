@@ -4,11 +4,15 @@ body {
   padding: 30px;
 }
 
-h1 {
+h2 {
+  position: relative;
+  left: 50%;
   margin-bottom: 20px;
 }
 
 table {
+  position: relative;
+  left: 50%;
   width: 100%;
   border-collapse: collapse;
   background: #fff;
